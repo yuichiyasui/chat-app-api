@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
     def show
-        Room.all
+        rooms = Room.all
+        render json: { data: rooms }
     end
 end
