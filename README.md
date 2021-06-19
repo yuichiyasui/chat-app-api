@@ -1,24 +1,14 @@
-# README
+# chat-app-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+シンプルなチャットアプリのサンプル（認証、ユーザー登録なし）
 
-Things you may want to cover:
+## 起動方法
 
-* Ruby version
+`rails s`
 
-* System dependencies
+## 環境情報
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+|               | バージョン |
+| ------------- | ---------- |
+| ruby          | 2.7.1      |
+| Ruby on Rails | 6.0.3.7    |
