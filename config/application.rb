@@ -35,5 +35,9 @@ module ChatAppApi
     config.api_only = true
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
+
+    # レスポンスのJSONをsnake_case -> camelCaseに変換する
+    # https://codethumbs.com/2020/07/19/how-to-make-your-rails-api-work-with-camelcase/
+    config.middleware.use OliveBranch::Middleware, inflection: 'camel'
   end
 end
