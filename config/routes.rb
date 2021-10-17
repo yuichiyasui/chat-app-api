@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get '/rooms', to: 'rooms#show'
   get '/rooms/:id', to: 'rooms#fetch'
   post '/rooms', to: 'rooms#create'
-  get '/users/:id', to: 'users#fetch'
+  get '/users/:user_id', to: 'users#fetch'
   post '/users', to: 'users#register'
 end
