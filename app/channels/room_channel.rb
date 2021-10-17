@@ -16,6 +16,16 @@ class RoomChannel < ApplicationCable::Channel
     ActionCable.server.broadcast "room_#{params[:id]}", res
   end
 
+  def exit(uuid)
+    user = User.find_by(uuid: uuid)
+    res = { 
+      "type": "notification",
+      "message": "#{user.name}さんが退出しました", 
+      "createdAt": Time.now
+    }
+    ActionCable.server.broadcast "room_#{params[:id]}", res
+  end
+
   def submit(data)
     user = User.find_by(uuid: params[:uuid])
     res = { 
@@ -30,5 +40,6 @@ class RoomChannel < ApplicationCable::Channel
 
   def unsubscribed
     logger.info "ルームID:#{params[:id]}の購読が終了されました"
+    exit(params[:uuid])
   end
 end
